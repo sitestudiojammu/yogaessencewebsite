@@ -271,6 +271,20 @@
       gap: 1rem;
     }
 
+    /* Logo container with SVG + text */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo svg {
+      width: 42px;
+      height: 42px;
+      transition: transform 0.3s ease;
+    }
+    .logo:hover svg {
+      transform: scale(1.05);
+    }
     .logo a {
       font-size: 1.8rem;
       font-weight: 400;
@@ -279,16 +293,9 @@
       font-family: var(--font-elegant);
       letter-spacing: 2px;
       text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    }
-
-    .trishul-icon {
-      font-size: 0.75em;
-      margin-left: 6px;
-      vertical-align: middle;
-      display: inline-block;
-      transform: translateY(-2px);
-      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
-      opacity: 0.9;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .nav-links {
@@ -933,6 +940,8 @@
       .fixed-book-btn { padding: 0.8rem 1.5rem; font-size: 1rem; bottom: 15px; white-space: nowrap; }
       .floating-wa { bottom: 90px; right: 15px; width: 50px; height: 50px; }
       .footer-inner { flex-direction: column; text-align: center; }
+      .logo svg { width: 32px; height: 32px; }
+      .logo a { font-size: 1.4rem; }
     }
     @media (max-width: 500px) {
       .btn, .btn-light, .btn-primary { padding: 0.6rem 1rem !important; font-size: 0.9rem !important; white-space: normal !important; }
@@ -963,7 +972,26 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="logo"><a href="#home">Palvi Gulati <span class="trishul-icon">🔱</span></a></div>
+      <div class="logo">
+        <!-- Yoga Lotus SVG Logo -->
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="Lotus">
+            <!-- Outer petals -->
+            <path d="M50,20 L58,35 L70,32 L62,47 L75,50 L62,53 L70,68 L58,65 L50,80 L42,65 L30,68 L38,53 L25,50 L38,47 L30,32 L42,35 L50,20Z" fill="#b07d5e" stroke="#d9b48b" stroke-width="1.2" stroke-linejoin="round"/>
+            <!-- Inner petals -->
+            <path d="M50,32 L55,43 L65,41 L58,52 L68,55 L58,58 L65,69 L55,67 L50,78 L45,67 L35,69 L42,58 L32,55 L42,52 L35,41 L45,43 L50,32Z" fill="#c49a7c" stroke="#e6c9af" stroke-width="1"/>
+            <!-- Center circle -->
+            <circle cx="50" cy="55" r="7" fill="#e6c9af" stroke="#b07d5e" stroke-width="1"/>
+            <!-- Stamen dots -->
+            <circle cx="50" cy="53" r="1" fill="#b07d5e"/>
+            <circle cx="46" cy="56" r="0.8" fill="#b07d5e"/>
+            <circle cx="54" cy="56" r="0.8" fill="#b07d5e"/>
+            <circle cx="48" cy="60" r="0.8" fill="#b07d5e"/>
+            <circle cx="52" cy="60" r="0.8" fill="#b07d5e"/>
+          </g>
+        </svg>
+        <a href="#home">Palvi Gulati</a>
+      </div>
       <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
       <nav class="nav-links" id="mainNav">
         <a href="#home">Home</a>
